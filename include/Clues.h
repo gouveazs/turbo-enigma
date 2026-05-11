@@ -1,12 +1,10 @@
 #pragma once
 #include <string>
 
-class Suspect {
+class Pista {
     public:
         int id;
         std::string nome;
         std::string descricao;
-        std::string motivo;
-        std::string alibe;
-        bool culpa;
+        bool encontrada;
 };
