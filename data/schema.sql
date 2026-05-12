@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS vitima (
     idade INTEGER NOT NULL,
     estado_encontrada TEXT NOT NULL,
     causa_morte TEXT,
+    horario_morte TEXT,
     observacoes TEXT
 );
 
@@ -18,9 +19,11 @@ CREATE TABLE IF NOT EXISTS cena_crime (
 CREATE TABLE IF NOT EXISTS suspeitos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT NOT NULL,
+    idade INTEGER,
+    relacao_vitima TEXT,
     descricao TEXT,
-    motivo TEXT,
-    alibi TEXT,
+    possivel_motivo TEXT,
+    alibe TEXT,
     culpa INTEGER NOT NULL DEFAULT 0 CHECK (culpa IN (0, 1))
 );
 
