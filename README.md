@@ -1,16 +1,34 @@
 # Casa das Folhas
 
-Casa das Folhas é um jogo investigativo em terminal feito em C++ com SQLite.
-O jogador assume o papel de investigador, analisa a cena do crime, consulta o
-relatório da vítima, interroga suspeitos, encontra pistas e decide quem acusar.
+Um jogo investigativo de terminal feito em C++.
+
+Em **Casa das Folhas**, você assume o papel de um investigador responsável por
+resolver um crime dentro de uma escola. Para chegar à verdade, é preciso visitar
+a cena do crime, ler o relatório da vítima, interrogar suspeitos, reunir pistas
+e fazer uma acusação final.
+
+Mas cuidado: a acusação encerra o caso. Se escolher a pessoa errada, o verdadeiro
+culpado escapa.
+
+## Sobre o Jogo
+
+O jogo acontece inteiramente pelo terminal e usa um banco SQLite para guardar os
+dados do caso, como vítima, suspeitos, pistas e informações importantes.
+
+Durante a investigação, novas pistas são desbloqueadas conforme o jogador toma
+certas ações. No final, o jogador deve decidir quem é o culpado.
 
 ## Funcionalidades
 
-- Menu interativo no terminal
+- Menus interativos no terminal
 - Efeito de digitação nos textos
-- Banco de dados SQLite para guardar vítima, suspeitos, pistas e informações
-- Pistas desbloqueadas conforme o jogador investiga
-- Sistema de acusação com final de vitória ou derrota
+- Cena do crime com pista desbloqueável
+- Relatório da vítima
+- Interrogatório de suspeitos
+- Sistema de pistas encontradas
+- Informações extras do caso
+- Acusação final com vitória ou derrota
+- Banco de dados SQLite para organizar os dados do jogo
 
 ## Tecnologias
 
@@ -19,27 +37,44 @@ relatório da vítima, interroga suspeitos, encontra pistas e decide quem acusar
 
 ## Como Compilar
 
+Na raiz do projeto, execute:
+
 ```bash
 g++ -std=c++17 main.cpp src/*.cpp -Iinclude -lsqlite3 -o game
 ```
 
 ## Como Rodar
 
+Depois de compilar:
+
 ```bash
 ./game
 ```
 
-## Estrutura
+## Estrutura do Projeto
 
-- `main.cpp`: entrada do programa
-- `src/Game.cpp`: fluxo principal do jogo
-- `src/Menu.cpp`: menus do terminal
-- `src/Database.cpp`: conexão e consultas no banco
+```text
+.
+├── data/
+│   ├── game.sql       # Dados iniciais do caso
+│   └── schema.sql     # Estrutura das tabelas
+├── include/           # Arquivos de cabeçalho
+├── src/               # Implementação das classes
+├── main.cpp           # Entrada do programa
+└── README.md
+```
+
+## Principais Arquivos
+
+- `src/Game.cpp`: controla o fluxo principal da investigação
+- `src/Menu.cpp`: exibe os menus e recebe escolhas do jogador
+- `src/Database.cpp`: conecta e consulta o banco SQLite
 - `src/Utils.cpp`: funções auxiliares, como limpar tela e efeito de digitação
-- `data/schema.sql`: criação das tabelas
-- `data/game.sql`: dados iniciais do caso
+- `data/game.sql`: personagens, pistas e informações do caso
+- `data/schema.sql`: criação das tabelas do banco
 
 ## Objetivo
 
-Investigue o caso, reúna as pistas e acuse o suspeito correto. A acusação
-encerra o jogo, seja com sucesso ou com fracasso.
+Investigue com atenção, conecte as pistas e acuse o suspeito correto.
+
+Uma decisão errada pode encerrar o caso para sempre.
