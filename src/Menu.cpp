@@ -14,13 +14,13 @@ int Menu :: MenuInicial() {
     return opcao;
 }
 
-int Menu :: MenuInvestigacao() {
+int Menu :: MenuPrincipal() {
     int acao;
 
     std::cout << "\n=== Investigação ===\n";
     std::cout << "1 - Ir para cena do crime\n";
     std::cout << "2 - Ver relatorio da vitima\n";
-    std::cout << "3 - Ver relatorio de suspeitos\n";
+    std::cout << "3 - Interrogar suspeitos\n";
     std::cout << "4 - Ver pistas\n";
     std::cout << "5 - Ver informacoes do caso\n";
     std::cout << "6 - Acusar suspeito\n";
@@ -30,4 +30,18 @@ int Menu :: MenuInvestigacao() {
     std::cin >> acao;
 
     return acao;
+}
+
+int Menu::InterrogarSuspeito() {
+    int quem;
+
+    std::cout << "\n=== Sala de Interrogatório ===\n";
+    std::cout << "1 - Isabela Camaro\n";
+    std::cout << "2 - Alexandre Magno\n";
+    std::cout << "3 - Murilo Paiva\n";
+    std::cout << "Quem você deseja interrogar: ";
+
+    std::cin >> quem;
+
+    return quem;
 }

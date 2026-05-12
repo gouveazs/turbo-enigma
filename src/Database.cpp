@@ -85,7 +85,7 @@ Vitima Database::relatorioVitima() {
     sqlite3_stmt* stmt;
     Vitima vitima;
 
-    const char* sql = "SELECT id, nome, idade, estado_encontrada, causa_morte, observacoes FROM vitima ORDER BY id;";
+    const char* sql = "SELECT id, nome, idade, estado_encontrada, causa_morte, horario_morte, observacoes FROM vitima ORDER BY id;";
 
     int result = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
 
@@ -99,7 +99,8 @@ Vitima Database::relatorioVitima() {
         vitima.idade = sqlite3_column_int(stmt, 2);
         vitima.estado_encontrada = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
         vitima.causa_morte = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-        vitima.observacoes = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+        vitima.horario_morte = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+        vitima.observacoes = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 6));
     }
 
     sqlite3_finalize(stmt);
@@ -135,7 +136,7 @@ std::vector<Suspect> Database::listarSuspeitos() {
     std::vector<Suspect> suspeitos;
     sqlite3_stmt* stmt;
 
-    const char* sql = "SELECT id, nome, descricao, motivo, alibi, culpa FROM suspeitos ORDER BY id;";
+    const char* sql = "SELECT id, nome, idade, relacao_vitima, descricao, possivel_motivo, alibe, culpa FROM suspeitos ORDER BY id;";
 
     int result = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
 
@@ -148,10 +149,12 @@ std::vector<Suspect> Database::listarSuspeitos() {
 
         suspeito.id = sqlite3_column_int(stmt, 0);
         suspeito.nome = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1));
-        suspeito.descricao = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2));
-        suspeito.motivo = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
-        suspeito.alibe = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
-        suspeito.culpa = sqlite3_column_int(stmt, 5) == 1;
+        suspeito.idade = sqlite3_column_int(stmt, 2);
+        suspeito.relacao_vitima = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 3));
+        suspeito.descricao = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4));
+        suspeito.possivel_motivo = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 5));
+        suspeito.alibe = reinterpret_cast<const char*>(sqlite3_column_text(stmt, 6));
+        suspeito.culpa = sqlite3_column_int(stmt, 7) == 1;
 
         suspeitos.push_back(suspeito);
     }

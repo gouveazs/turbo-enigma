@@ -5,5 +5,6 @@ class Menu {
 
     public:
         int MenuInicial();
-        int MenuInvestigacao();
+        int MenuPrincipal();
+        int InterrogarSuspeito();
 };

@@ -10,7 +10,7 @@ INSERT OR IGNORE INTO suspeitos (id, nome, idade, relacao_vitima, descricao, pos
 VALUES
     (1, 'Isabela Camaro', 16, 'Melhor amiga da vítima.', 'Cabelos castanhos bagunçados, olheras e pupílas dilatadas.', 'Invejava beleza da amiga.', 'Diz estar na aula no horário do crime.', 0),
     (2, 'Alexandre Magno', 18, 'Ex-namorado da vítima.', 'Cabelo corte social, dentes amarelados e olhar cansado.', 'Descobrimento de uma traição por parte da vítima.', 'Diz estar em casa no dia do crime.', 0),
-    (3, 'Murilo Paiva', 17, 'Namorado atual da vítima.', 'Cabelos longos, nariz escorrendo e dentes amarelados.', 'Sem motivos aparentes.', 'Diz estar na aula no horário do crime.', 1),
+    (3, 'Murilo Paiva', 17, 'Namorado atual da vítima.', 'Cabelos longos, nariz escorrendo e dentes amarelados.', 'Sem motivos aparentes.', 'Diz estar na aula no horário do crime.', 1);
     
 INSERT OR IGNORE INTO pistas (id, nome, descricao, encontrada)
 VALUES
@@ -22,5 +22,5 @@ INSERT OR IGNORE INTO informacoes (id, titulo, descricao)
 VALUES
     (1, 'Informação 1', 'De acordo com a escola não há registros de que Isabela foi para aula no dia do crime.'),
     (2, 'Informação 2', 'Laura sempre se encontrava com seus namorados nos fundos da escola no começo da manhã.'),
-    (3, 'Informação 3', 'Laura e seu atual namorado viviam discutindo muito recentemente.');
+    (3, 'Informação 3', 'Laura e seu atual namorado viviam discutindo muito recentemente.'),
     (4, 'Informação 4', 'Pessoas dizem ter ouvido uma discussão entre oque parecia uma mulher e um homem nos fundos da escola perto do horário do crime.');

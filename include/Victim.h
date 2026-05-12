@@ -8,5 +8,6 @@ class Vitima {
         int idade;
         std::string estado_encontrada;
         std::string causa_morte;
+        std::string horario_morte;
         std::string observacoes;
 };
