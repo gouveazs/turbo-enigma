@@ -1,41 +1,41 @@
-# Casa das Folhas
+# 🕯️ Casa das Folhas
 
-Um jogo investigativo de terminal feito em C++.
+Um jogo investigativo de terminal feito em **C++**.
 
 Em **Casa das Folhas**, você assume o papel de um investigador responsável por
 resolver um crime dentro de uma escola. Para chegar à verdade, é preciso visitar
 a cena do crime, ler o relatório da vítima, interrogar suspeitos, reunir pistas
 e fazer uma acusação final.
 
-Mas cuidado: a acusação encerra o caso. Se escolher a pessoa errada, o verdadeiro
-culpado escapa.
+> ⚠️ Cuidado: a acusação encerra o caso.  
+> Se escolher a pessoa errada, o verdadeiro culpado escapa.
 
-## Sobre o Jogo
+## 🔎 Sobre o Jogo
 
-O jogo acontece inteiramente pelo terminal e usa um banco SQLite para guardar os
-dados do caso, como vítima, suspeitos, pistas e informações importantes.
+O jogo acontece inteiramente pelo terminal e usa um banco **SQLite** para guardar
+os dados do caso, como vítima, suspeitos, pistas e informações importantes.
 
 Durante a investigação, novas pistas são desbloqueadas conforme o jogador toma
 certas ações. No final, o jogador deve decidir quem é o culpado.
 
-## Funcionalidades
+## ✨ Funcionalidades
 
-- Menus interativos no terminal
-- Efeito de digitação nos textos
-- Cena do crime com pista desbloqueável
-- Relatório da vítima
-- Interrogatório de suspeitos
-- Sistema de pistas encontradas
-- Informações extras do caso
-- Acusação final com vitória ou derrota
-- Banco de dados SQLite para organizar os dados do jogo
+- 🧭 Menus interativos no terminal
+- ⌨️ Efeito de digitação nos textos
+- 📍 Cena do crime com pista desbloqueável
+- 📝 Relatório da vítima
+- 🗣️ Interrogatório de suspeitos
+- 🧩 Sistema de pistas encontradas
+- 📚 Informações extras do caso
+- ⚖️ Acusação final com vitória ou derrota
+- 🗄️ Banco de dados SQLite para organizar os dados do jogo
 
-## Tecnologias
+## 🛠️ Tecnologias
 
 - C++
 - SQLite
 
-## Como Compilar
+## 🚀 Como Compilar
 
 Na raiz do projeto, execute:
 
@@ -43,7 +43,7 @@ Na raiz do projeto, execute:
 g++ -std=c++17 main.cpp src/*.cpp -Iinclude -lsqlite3 -o game
 ```
 
-## Como Rodar
+## 🎮 Como Rodar
 
 Depois de compilar:
 
@@ -51,7 +51,7 @@ Depois de compilar:
 ./game
 ```
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```text
 .
@@ -64,7 +64,7 @@ Depois de compilar:
 └── README.md
 ```
 
-## Principais Arquivos
+## 📌 Principais Arquivos
 
 - `src/Game.cpp`: controla o fluxo principal da investigação
 - `src/Menu.cpp`: exibe os menus e recebe escolhas do jogador
@@ -73,8 +73,8 @@ Depois de compilar:
 - `data/game.sql`: personagens, pistas e informações do caso
 - `data/schema.sql`: criação das tabelas do banco
 
-## Objetivo
+## 🕵️ Objetivo
 
 Investigue com atenção, conecte as pistas e acuse o suspeito correto.
 
-Uma decisão errada pode encerrar o caso para sempre.
+**Uma decisão errada pode encerrar o caso para sempre.**
