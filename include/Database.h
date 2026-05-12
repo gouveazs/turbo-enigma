@@ -31,6 +31,7 @@ public:
 
     Vitima relatorioVitima();
     Cena_crime verCenaCrime();
+    bool marcarPistaEncontrada(int id);
     std::vector<Suspect> listarSuspeitos();
     std::vector<Pista> verPistas();
     std::vector<Informacao> verInformacoes();

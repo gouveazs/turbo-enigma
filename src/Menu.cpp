@@ -1,13 +1,15 @@
 #include <iostream>
 #include "../include/Menu.h"
+#include "../include/Utils.h"
 
 int Menu :: MenuInicial() {
     int opcao;
 
-    std::cout << "\n === Casa das Folhas ===\n";
-    std::cout << "1 - Novo Jogo\n";
-    std::cout << "2 - Carregar Jogo\n";
-    std::cout << "3 - Sair do jogo\n";
+    digitarTexto("\n === Casa das Folhas ===\n", 15);
+    digitarTexto("1 - Novo Jogo\n", 5);
+    digitarTexto("2 - Carregar Jogo\n", 5);
+    digitarTexto("3 - Sair do jogo\n", 5);
+    digitarTexto("Escolha: ", 10);
 
     std::cin >> opcao;
 
@@ -17,15 +19,15 @@ int Menu :: MenuInicial() {
 int Menu :: MenuPrincipal() {
     int acao;
 
-    std::cout << "\n=== Investigação ===\n";
-    std::cout << "1 - Ir para cena do crime\n";
-    std::cout << "2 - Ver relatorio da vitima\n";
-    std::cout << "3 - Interrogar suspeitos\n";
-    std::cout << "4 - Ver pistas\n";
-    std::cout << "5 - Ver informacoes do caso\n";
-    std::cout << "6 - Acusar suspeito\n";
-    std::cout << "7 - Voltar\n";
-    std::cout << "Escolha: ";
+    digitarTexto("\n=== Investigação ===\n", 10);
+    digitarTexto("1 - Ir para cena do crime\n", 3);
+    digitarTexto("2 - Ver relatorio da vitima\n", 3);
+    digitarTexto("3 - Interrogar suspeitos\n", 3);
+    digitarTexto("4 - Ver pistas\n", 3);
+    digitarTexto("5 - Ver informacoes do caso\n", 3);
+    digitarTexto("6 - Acusar suspeito\n", 3);
+    digitarTexto("7 - Voltar\n", 3);
+    digitarTexto("Escolha: ", 8);
 
     std::cin >> acao;
 
@@ -35,11 +37,25 @@ int Menu :: MenuPrincipal() {
 int Menu::InterrogarSuspeito() {
     int quem;
 
-    std::cout << "\n=== Sala de Interrogatório ===\n";
-    std::cout << "1 - Isabela Camaro\n";
-    std::cout << "2 - Alexandre Magno\n";
-    std::cout << "3 - Murilo Paiva\n";
-    std::cout << "Quem você deseja interrogar: ";
+    digitarTexto("\n=== Sala de Interrogatório ===\n", 10);
+    digitarTexto("1 - Isabela Camaro\n", 4);
+    digitarTexto("2 - Alexandre Magno\n", 4);
+    digitarTexto("3 - Murilo Paiva\n", 4);
+    digitarTexto("Quem você deseja interrogar: ", 8);
+
+    std::cin >> quem;
+
+    return quem;
+}
+
+int Menu::Acusacao() {
+    int quem;
+
+    digitarTexto("\n=== Tribunal ===\n", 15);
+    digitarTexto("1 - Isabela Camaro\n", 4);
+    digitarTexto("2 - Alexandre Magno\n", 4);
+    digitarTexto("3 - Murilo Paiva\n", 4);
+    digitarTexto("Quem é o culpado: ", 12);
 
     std::cin >> quem;
 

@@ -9,7 +9,8 @@ class Game {
         void RelatorioVitima(Database& database);
         void VerPistas(Database& Database);
         void VerInformacoes(Database& database);
-    
+        bool AcusarSuspeito(Database& database);
+            
     public:
         void run();
 };

@@ -7,4 +7,5 @@ class Menu {
         int MenuInicial();
         int MenuPrincipal();
         int InterrogarSuspeito();
+        int Acusacao();
 };

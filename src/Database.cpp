@@ -132,6 +132,11 @@ Cena_crime Database::verCenaCrime() {
     return cena;
 }
 
+bool Database::marcarPistaEncontrada(int id) {
+    std::string sql = "UPDATE pistas SET encontrada = 1 WHERE id = " + std::to_string(id) + ";";
+    return execute(sql);
+}
+
 std::vector<Suspect> Database::listarSuspeitos() {
     std::vector<Suspect> suspeitos;
     sqlite3_stmt* stmt;
@@ -168,7 +173,7 @@ std::vector<Pista> Database::verPistas() {
     std::vector<Pista> pistas;
     sqlite3_stmt* stmt;
 
-    const char* sql = "SELECT id, nome, descricao, encontrada FROM pistas ORDER BY id;";
+    const char* sql = "SELECT id, nome, descricao, encontrada FROM pistas WHERE encontrada = 1 ORDER BY id;";
     int result = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
 
     if (result != SQLITE_OK) {
